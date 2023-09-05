@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartRenamer Options</title>
+    <style>
+      body {
+        width: 300px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+      }
+
+      button {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <script src="options.js"></script>
+  </head>
+  <body>
+    <h1>SmartRenamer Options</h1>
+    <label for="websiteNameCheckbox">
+      <input type="checkbox" id="websiteNameCheckbox" /> Include website name in
+      filename
+    </label>
+    <label for="dateCheckbox">
+      <input type="checkbox" id="dateCheckbox" /> Include date in filename
+    </label>
+    <label for="separatorInput">
+      Separator character:
+      <input
+        type="text"
+        id="separatorInput"
+        placeholder="Separator character (e.g., -)"
+      />
+    </label>
+    <button id="saveButton">Save</button>
+  </body>
+</html>

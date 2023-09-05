@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartRenamer</title>
+    <style>
+      body {
+        width: 300px;
+        height: 200px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      input[type="checkbox"] {
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h1>SmartRenamer Settings</h1>
+    <input type="checkbox" id="websiteNameCheckbox" checked />
+    <label for="websiteNameCheckbox">Include website name in filename</label
+    ><br />
+    <input type="checkbox" id="dateCheckbox" checked />
+    <label for="dateCheckbox">Include date in filename</label><br />
+    <input
+      type="text"
+      id="separatorInput"
+      placeholder="Separator character (e.g., -)"
+    />
+    <br />
+    <button id="saveButton">Save</button>
+    <div id="status"></div>
+    <!-- Status element to display messages -->
+  </body>
+</html>
