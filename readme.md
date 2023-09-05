@@ -51,6 +51,10 @@ This project relies on the following open-source libraries and resources:
 - Library 1:
 - Library 2:
 
+## icons
+
+<a href="https://www.flaticon.com/free-icons/rename" title="rename icons">Rename icons created by Iconjam - Flaticon</a>
+
 ## Support
 
 If you need support or encounter any issues while using Smart Renamer Extension, please visit our [support forum](https://example.com/support) for assistance.
