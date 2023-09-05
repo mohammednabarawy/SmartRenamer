@@ -1,14 +1,12 @@
-# Extension Title
-
-Smart Renamer
+# Smart Renamer
 
 ## Description
 
-Smart Renamer is a powerful browser extension that helps users efficiently rename multiple files and folders in one go. It provides a user-friendly interface and various renaming options to streamline the renaming process and save time.
+Smart Renamer Smartly rename downloaded files based on website and date. It provides a user-friendly interface and various renaming options to streamline the renaming process and save time.
 
 ## Installation
 
-To install My Awesome Extension, follow these steps:
+To install Smart Renamer Extension, follow these steps:
 
 1. Clone the repository or download the ZIP file.
 2. Unzip the downloaded file.
@@ -19,11 +17,11 @@ To install My Awesome Extension, follow these steps:
 
 ## Usage
 
-Once installed, My Awesome Extension provides the following features:
+Once installed, Smart Renamer Extension provides the following features:
 
-- Feature 1: Describe the first feature and how it benefits users.
-- Feature 2: Explain the second feature and how it improves browsing experience.
-- Feature 3: Highlight the third feature and its usefulness.
+- Feature 1:
+- Feature 2:
+- Feature 3:
 
 To access the extension, click on the extension icon in your browser's toolbar. From there, you can interact with the extension and customize its settings according to your preferences.
 
@@ -41,25 +39,25 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or inquiries about My Awesome Extension, feel free to reach out to the project maintainer:
+For any questions or inquiries about Smart Renamer Extension, feel free to reach out to the project maintainer:
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- Twitter: [@your-twitter-handle](https://twitter.com/your-twitter-handle)
+- Email:
+- Twitter:
 
 ## Acknowledgements
 
 This project relies on the following open-source libraries and resources:
 
-- Library 1: Mention the first library and its contribution to the project.
-- Library 2: Recognize the second library and its usefulness.
+- Library 1:
+- Library 2:
 
 ## Support
 
-If you need support or encounter any issues while using My Awesome Extension, please visit our [support forum](https://example.com/support) for assistance.
+If you need support or encounter any issues while using Smart Renamer Extension, please visit our [support forum](https://example.com/support) for assistance.
 
 ## Release Notes
 
 ### Version 1.0.0
 
-- Initial release of My Awesome Extension.
+- Initial release of Smart Renamer Extension.
 - Added feature 1 and feature 2.
