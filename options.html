@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>SmartRenamer Options</title>
+    <title>SmartRenamer</title>
     <style>
       body {
         width: 300px;
+        height: 400px; /* Increased the height to accommodate the new section */
         font-family: Arial, sans-serif;
         font-size: 14px;
         padding: 10px;
@@ -16,13 +17,13 @@
         margin-bottom: 10px;
       }
 
-      label {
-        display: block;
+      input[type="checkbox"] {
         margin-bottom: 10px;
       }
 
       input[type="text"] {
         width: 100%;
+        margin-bottom: 10px;
       }
 
       button {
@@ -36,26 +37,109 @@
       button:hover {
         background-color: #45a049;
       }
+
+      /* Add a tooltip style */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+      }
+
+      .tooltip-text {
+        visibility: hidden;
+        width: 200px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; /* Position above the element */
+        left: 50%;
+        margin-left: -100px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
     </style>
-    <script src="options.js"></script>
+    <script src="popup.js"></script>
   </head>
   <body>
-    <h1>SmartRenamer Options</h1>
-    <label for="websiteNameCheckbox">
-      <input type="checkbox" id="websiteNameCheckbox" /> Include website name in
-      filename
+    <h1>SmartRenamer Settings</h1>
+    <!-- Checkbox for including website name -->
+    <label class="tooltip" for="websiteNameCheckbox">
+      <input type="checkbox" id="websiteNameCheckbox" checked />
+      Include website name in filename
+      <span class="tooltip-text"
+        >Include the name of the website in the filename.</span
+      >
     </label>
-    <label for="dateCheckbox">
-      <input type="checkbox" id="dateCheckbox" /> Include date in filename
+    <br />
+
+    <!-- Checkbox for including date -->
+    <label class="tooltip" for="dateCheckbox">
+      <input type="checkbox" id="dateCheckbox" checked />
+      Include date in filename
+      <span class="tooltip-text"
+        >Include the current date in the filename.</span
+      >
     </label>
-    <label for="separatorInput">
+    <br />
+
+    <!-- Separator input with tooltip -->
+    <label class="tooltip" for="separatorInput">
       Separator character:
       <input
         type="text"
         id="separatorInput"
         placeholder="Separator character (e.g., -)"
       />
+      <span class="tooltip-text"
+        >Specify the character used to separate elements in the filename.</span
+      >
     </label>
+    <br />
+
+    <!-- Save button -->
     <button id="saveButton">Save</button>
+    <div id="status"></div>
+
+    <!-- Add a section for file type filters -->
+    <h2>File Type Filters</h2>
+    <div id="fileTypeFilters">
+      <!-- Users can define rules for different file types -->
+      <div class="file-type-rule">
+        <label for="fileTypeImage">Image:</label>
+        <input
+          type="text"
+          id="fileTypeImage"
+          placeholder="Image naming scheme"
+        />
+      </div>
+      <div class="file-type-rule">
+        <label for="fileTypeDocument">Document:</label>
+        <input
+          type="text"
+          id="fileTypeDocument"
+          placeholder="Document naming scheme"
+        />
+      </div>
+      <div class="file-type-rule">
+        <label for="fileTypeVideo">Video:</label>
+        <input
+          type="text"
+          id="fileTypeVideo"
+          placeholder="Video naming scheme"
+        />
+      </div>
+    </div>
+
+    <h2>Preview</h2>
+    <div id="filenamePreview">Preview will appear here</div>
   </body>
 </html>

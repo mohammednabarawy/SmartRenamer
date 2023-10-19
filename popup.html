@@ -6,7 +6,7 @@
     <style>
       body {
         width: 300px;
-        height: 200px;
+        height: 280px; /* Adjusted height for file type filters */
         font-family: Arial, sans-serif;
         font-size: 14px;
         padding: 10px;
@@ -42,19 +42,51 @@
   </head>
   <body>
     <h1>SmartRenamer Settings</h1>
+    <!-- Checkbox for including website name -->
     <input type="checkbox" id="websiteNameCheckbox" checked />
     <label for="websiteNameCheckbox">Include website name in filename</label
     ><br />
+
+    <!-- Checkbox for including date -->
     <input type="checkbox" id="dateCheckbox" checked />
     <label for="dateCheckbox">Include date in filename</label><br />
+
+    <!-- Separator input -->
     <input
       type="text"
       id="separatorInput"
       placeholder="Separator character (e.g., -)"
-    />
-    <br />
+    /><br />
+
+    <!-- Add a section for file type filters -->
+    <h2>File Type Filters</h2>
+    <div id="fileTypeFilters">
+      <label for="fileTypeImage">Image:</label>
+      <input
+        type="text"
+        id="fileTypeImage"
+        placeholder="Image naming scheme"
+      /><br />
+      <label for="fileTypeDocument">Document:</label>
+      <input
+        type="text"
+        id="fileTypeDocument"
+        placeholder="Document naming scheme"
+      /><br />
+      <label for="fileTypeVideo">Video:</label>
+      <input
+        type="text"
+        id="fileTypeVideo"
+        placeholder="Video naming scheme"
+      /><br />
+    </div>
+
+    <!-- Save button -->
     <button id="saveButton">Save</button>
     <div id="status"></div>
     <!-- Status element to display messages -->
+
+    <!-- Add a div for displaying the preview -->
+    <div id="filenamePreview">Preview will appear here</div>
   </body>
 </html>

@@ -1,4 +1,3 @@
-// Event listener for determining the filename
 chrome.downloads.onDeterminingFilename.addListener(function (item, suggest) {
   // Get the URL of the active tab
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
@@ -10,7 +9,13 @@ chrome.downloads.onDeterminingFilename.addListener(function (item, suggest) {
         var domain = domainParts[domainParts.length - 2];
 
         chrome.storage.sync.get(
-          ["includeDate", "separator", "siteUrl", "extraText"],
+          [
+            "includeDate",
+            "separator",
+            "siteUrl",
+            "extraText",
+            "fileTypeFilters",
+          ],
           function (result) {
             var includeDate = result.includeDate !== false;
             var separator = result.separator || "-";
@@ -36,6 +41,18 @@ chrome.downloads.onDeterminingFilename.addListener(function (item, suggest) {
 
             // Append original filename
             filename += item.filename;
+
+            // Determine the file type of the item (assuming you have a function to do this)
+            var fileType = determineFileType(item.filename);
+
+            // Get the user-defined file type filters
+            var fileTypeFilters = result.fileTypeFilters || {};
+
+            // Check if there is a custom naming scheme for the file type
+            if (fileTypeFilters[fileType]) {
+              // Apply the custom naming scheme for the file type
+              filename = fileTypeFilters[fileType];
+            }
 
             // Suggest the new filename
             suggest({ filename: filename });
@@ -69,4 +86,26 @@ function formatTime(date) {
   var period = hours >= 12 ? "pm" : "am";
   hours = hours % 12 || 12;
   return hours + "-" + minutes + period;
+}
+
+function determineFileType(filename) {
+  // Extract the file extension from the filename
+  const fileExtension = filename.split(".").pop().toLowerCase();
+
+  // Define mappings between common file extensions and file types
+  const extensionToType = {
+    jpg: "image",
+    jpeg: "image",
+    png: "image",
+    gif: "image",
+    pdf: "document",
+    doc: "document",
+    docx: "document",
+    mp4: "video",
+    avi: "video",
+    mkv: "video",
+  };
+
+  // Default to a generic type if the extension is not recognized
+  return extensionToType[fileExtension] || "other";
 }
